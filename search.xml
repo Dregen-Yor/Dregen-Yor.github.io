@@ -1,31 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/10/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>网络流学习记录</title>
+    <url>/2023/10/16/network%20flow/</url>
+    <content><![CDATA[<h1 id="网络流">网络流</h1>
+<h3 id="二分图">二分图</h3>
+<h4 id="特殊的二分图匹配">特殊的二分图匹配</h4>
+<h5 id="完备匹配">完备匹配</h5>
+<p>对于一张二分图 <span
+class="math inline">\(((A,B),E)\)</span>，设其最大匹配为 <span
+class="math inline">\(E^\prime\)</span>，若 <span
+class="math inline">\(|A|=|B|=|E^\prime|\)</span>，则称这张二分图具有<strong>完备匹配</strong>。</p>
+<h5 id="多重匹配">多重匹配</h5>
+<p>对于一张二分图 <span class="math inline">\(((A,B),E)\)</span>，从
+<span class="math inline">\(E\)</span> 中选出尽量多的边，使 <span
+class="math inline">\(x \in A\)</span> 最多与 <span
+class="math inline">\(l_x\)</span> 条选出的边相连，<span
+class="math inline">\(y \in B\)</span> 最多与 <span
+class="math inline">\(r_y\)</span>
+条选出的边相连，则称选出的边为二分图的<strong>多重匹配</strong>。</p>
+<h5 id="最优匹配">最优匹配</h5>
+<p>对于一张二分图，边有边权，所有<strong>最大匹配</strong>中边权总和最大的，被称为<strong>最优匹配</strong>。</p>
+<h4 id="图的点覆盖">图的点覆盖</h4>
+<p>对于一张无向图 <span
+class="math inline">\((V,E)\)</span>，若存在一个点集 <span
+class="math inline">\(V^\prime\)</span>，满足 <span
+class="math inline">\(V^\prime \subseteq V\)</span>，且对于任意 <span
+class="math inline">\(e \in E\)</span>，<span
+class="math inline">\(e\)</span> 至少有一个端点属于 <span
+class="math inline">\(V^\prime\)</span>，则称 <span
+class="math inline">\(V^\prime\)</span>
+为这张无向图的一组<strong>点覆盖</strong>。</p>
+<h5 id="二分图最小点覆盖">二分图最小点覆盖</h5>
+<p>在二分图中，包含点数最少的一组点覆盖被称为二分图的最小点覆盖。</p>
+<h5 id="定理">定理</h5>
+<p>在二分图中，最小点覆盖包含的点数，等于最大匹配包含的边数。</p>
+<h5
+id="二分图最小点覆盖的一个要素二要素">二分图最小点覆盖的一个要素（二要素）</h5>
+<p>每条边有两个端点，二者中至少选择一个。</p>
+<h4 id="二分图最大独立集">二分图最大独立集</h4>
+<h5 id="图的独立集">图的独立集</h5>
+<p>对于一张无向图 <span
+class="math inline">\((V,E)\)</span>,若存在一个点集 <span
+class="math inline">\(V^\prime\)</span>，满足 <span
+class="math inline">\(V^\prime \subseteq V\)</span>，且对于任意 <span
+class="math inline">\(p,q \in V^\prime\)</span>，<span
+class="math inline">\((p,q) \notin E\)</span>，则称 <span
+class="math inline">\(V^\prime\)</span>
+为这张无向图的一组<strong>独立集</strong>，包含点数最多的独立集称为图的<strong>最大独立集</strong>。</p>
+<h5 id="图的团">图的团</h5>
+<p>对于一张无向图 <span
+class="math inline">\((V,E)\)</span>,若存在一个点集 <span
+class="math inline">\(V^\prime\)</span>，满足 <span
+class="math inline">\(V^\prime \subseteq V\)</span>，且对于任意 <span
+class="math inline">\(p,q \in V^\prime\)</span>，<span
+class="math inline">\((p,q) \in E\)</span>，则称 <span
+class="math inline">\(V^\prime\)</span>
+为这张无向图的一组<strong>团</strong>，包含点数最多的独立团的<strong>最大团</strong>。</p>
+<h5 id="定理-1">定理</h5>
+<p>对于无向图 <span class="math inline">\(G\)</span> 的最大团，等于补图
+<span class="math inline">\(G^\prime\)</span> 的最大独立集。</p>
+<p>对于一般无向图，最大团，最大独立集是 NPC 问题。</p>
+<h5 id="二分图最大独立集-1">二分图最大独立集</h5>
+<p>在二分图中，包含点数最多的一组独立集被称为二分图的最大独立集。</p>
+<h5 id="定理-2">定理</h5>
+<p>对于一张 <span class="math inline">\(n\)</span>
+个点的二分图，最大独立集大小，等于 <span
+class="math inline">\(n-\)</span> 最小点覆盖点数，等于 <span
+class="math inline">\(n-\)</span>最大匹配边数。</p>
+<h4 id="有向无环图的最小路径点覆盖">有向无环图的最小路径点覆盖</h4>
+<p>给定一张<strong>有向无环图</strong>，用尽量少的不相交的简单路径覆盖所有点（也就是每个点恰好被覆盖一次），这样的路径集合被称为<strong>最小路径点覆盖</strong>。</p>
+<h5 id="拆点二分图">拆点二分图</h5>
+<p>把每个点拆成编号为 <span class="math inline">\(x\)</span> 和 <span
+class="math inline">\(x+n\)</span> 的两个点。</p>
+<p>建立一张新的二分图，<span class="math inline">\(1 \sim n\)</span>
+是左部点，<span class="math inline">\(n+1 \sim 2n\)</span>
+是右部点。</p>
+<p>对于原图的每条有向边 <span
+class="math inline">\((x,y)\)</span>，在二分图的左部点 <span
+class="math inline">\(x\)</span> 和右部点 <span
+class="math inline">\(y+n\)</span> 之间连边。</p>
+<p>最终得到的二分图即为原图的<strong>拆点二分图</strong>。</p>
+<h5 id="定理-3">定理</h5>
+<p>有向无环图的最小路径点覆盖包含的路径条数，等于 <span
+class="math inline">\(n-\)</span> 拆点二分图的最大匹配边数。</p>
+<h3 id="最小割">最小割</h3>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <tags>
+        <tag>图论</tag>
+      </tags>
   </entry>
 </search>
