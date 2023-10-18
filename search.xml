@@ -85,6 +85,89 @@ class="math inline">\(y+n\)</span> 之间连边。</p>
 <p>有向无环图的最小路径点覆盖包含的路径条数，等于 <span
 class="math inline">\(n-\)</span> 拆点二分图的最大匹配边数。</p>
 <h3 id="最小割">最小割</h3>
+<p>给定一个网格 <span class="math inline">\(G=(V,E)\)</span>，源点为
+<span class="math inline">\(S\)</span>，汇点为 <span
+class="math inline">\(T\)</span>。</p>
+<p>若一个边集被删去后，源点 <span class="math inline">\(S\)</span>
+和汇点 <span class="math inline">\(T\)</span>
+不再连通，则称该边集为网络的<strong>割</strong>。</p>
+<p>边的容量之和最小的割称为网络的<strong>最小割</strong>。</p>
+<h5 id="最大流最小割定理">最大流最小割定理</h5>
+<p>最大流等于最小割。</p>
+<h5 id="点边转化">点边转化</h5>
+<p>把原来无向图中的每个点 <span
+class="math inline">\(x\)</span>，拆成入点 <span
+class="math inline">\(x\)</span> 和出点 <span
+class="math inline">\(x^\prime\)</span>，则在无向图中删去一个点，等价于在网络中断开
+<span class="math inline">\((x,x^\prime)\)</span>。</p>
+<p>对于任意 <span class="math inline">\(x \neq S\)</span> 且 <span
+class="math inline">\(x \neq T\)</span> 的点 <span
+class="math inline">\(x\)</span> 连有向边 <span
+class="math inline">\((x,x^\prime)\)</span>，容量为 <span
+class="math inline">\(1\)</span>。</p>
+<p>对于原无向图的每条边 <span
+class="math inline">\((x,y)\)</span>，连有向边 <span
+class="math inline">\((x^\prime,y)\)</span> 和 <span
+class="math inline">\((y^\prime,x)\)</span>，容量为 <span
+class="math inline">\(+\infty\)</span>，即防止割断。</p>
+<h5 id="集合划分模型">集合划分模型</h5>
+<p>有 <span class="math inline">\(n\)</span> 个物品和两个集合 <span
+class="math inline">\(S,T\)</span>。</p>
+<p>如果将一个物品放入 <span class="math inline">\(S\)</span> 集合会花费
+<span class="math inline">\(a_i\)</span>，放入 <span
+class="math inline">\(T\)</span> 集合会花费 <span
+class="math inline">\(b_i\)</span>。</p>
+<p>还有若干个形如 <span class="math inline">\(u,v,w\)</span>
+限制条件，表示如果 <span class="math inline">\(u\)</span> 和 <span
+class="math inline">\(v\)</span> 同时不在一个集合会花费 <span
+class="math inline">\(w\)</span>。</p>
+<p>每个物品必须且只能属于一个集合，求最小的代价。</p>
+<p>我们对于每个集合设置源点 <span class="math inline">\(S\)</span>
+和汇点 <span class="math inline">\(T\)</span>，第 <span
+class="math inline">\(i\)</span> 个点由 <span
+class="math inline">\(S\)</span> 连一条容量为 <span
+class="math inline">\(b_i\)</span> 的边、向 <span
+class="math inline">\(T\)</span> 连一条容量为 <span
+class="math inline">\(a_i\)</span> 的边。</p>
+<p>对于限制条件 <span class="math inline">\(u,v,w\)</span>，我们在 <span
+class="math inline">\(u,v\)</span> 之间连容量为 <span
+class="math inline">\(w\)</span> 的双向边。</p>
+<p>注意到当 <span class="math inline">\(S\)</span> 和 <span
+class="math inline">\(T\)</span> 不相连时，<span
+class="math inline">\(S\)</span> 能到达 <span
+class="math inline">\(i\)</span> 代表物品 <span
+class="math inline">\(i\)</span> 放入 <span
+class="math inline">\(S\)</span>，<span class="math inline">\(i\)</span>
+能到达 <span class="math inline">\(T\)</span> 代表物品 <span
+class="math inline">\(i\)</span> 放入 <span
+class="math inline">\(T\)</span>。</p>
+<p>当割开 <span class="math inline">\(S \to i\)</span> 的边，意味着
+<span class="math inline">\(i\)</span> 放入 <span
+class="math inline">\(T\)</span>；当割开 <span class="math inline">\(i
+\to T\)</span> 的边，意味着 <span class="math inline">\(i\)</span> 放入
+<span class="math inline">\(S\)</span>；</p>
+<p>当割开 <span class="math inline">\(u,v\)</span> 之间的边，意味着
+<span class="math inline">\(u,v\)</span> 不放入同一个集合。</p>
+<p>因此最小割就是最小花费。</p>
+<h5 id="最小割的可行边与必须边">最小割的可行边与必须边</h5>
+<p>首先求最大流，那么最小割的可行边与必须边都必须是<strong>满流</strong>。</p>
+<ul>
+<li>可行边 <span
+class="math inline">\((x,y)\)</span>：在残量网络中不存在 <span
+class="math inline">\(x\)</span> 到 <span
+class="math inline">\(y\)</span> 的路径。</li>
+<li>必须边 <span class="math inline">\((x,y)\)</span>：在残量网络中
+<span class="math inline">\(S\)</span> 能到 <span
+class="math inline">\(x\)</span> 且 <span
+class="math inline">\(y\)</span> 能到 <span
+class="math inline">\(T\)</span>。</li>
+</ul>
+<p>用 Tarjan 跑强连通分量，判断 <span class="math inline">\(x\)</span>
+和 <span class="math inline">\(y\)</span>
+是否在同一强连通分量中，同时判断 <span class="math inline">\(S\)</span>
+与 <span class="math inline">\(x\)</span>，<span
+class="math inline">\(y\)</span> 与 <span
+class="math inline">\(T\)</span> 是否在同一强连通分量中即可。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <tags>
         <tag>图论</tag>
