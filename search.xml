@@ -203,7 +203,8 @@
   <entry>
     <title>网络流学习记录</title>
     <url>/2023/10/16/%E7%BD%91%E7%BB%9C%E6%B5%81%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="网络流">网络流</h1>
+    <content><![CDATA[<p>网络流定理 <span id="more"></span></p>
+<h1 id="网络流">网络流</h1>
 <h3 id="二分图">二分图</h3>
 <h4 id="特殊的二分图匹配">特殊的二分图匹配</h4>
 <h5 id="完备匹配">完备匹配</h5>

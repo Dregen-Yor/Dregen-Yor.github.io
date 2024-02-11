@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"dregen-yor.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":null,"show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="网络流 二分图 特殊的二分图匹配 完备匹配 对于一张二分图 \(((A,B),E)\)，设其最大匹配为 \(E^\prime\)，若 \(|A|&#x3D;|B|&#x3D;|E^\prime|\)，则称这张二分图具有完备匹配。 多重匹配 对于一张二分图 \(((A,B),E)\)，从 \(E\) 中选出尽量多的边，使 \(x \in A\) 最多与 \(l_x\) 条选出的边相连，\(y \in B\) 最多与 \">
+    <meta name="description" content="网络流定理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络流学习记录">
 <meta property="og:url" content="https://dregen-yor.github.io/2023/10/16/%E7%BD%91%E7%BB%9C%E6%B5%81%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Dregen_Yor">
-<meta property="og:description" content="网络流 二分图 特殊的二分图匹配 完备匹配 对于一张二分图 \(((A,B),E)\)，设其最大匹配为 \(E^\prime\)，若 \(|A|&#x3D;|B|&#x3D;|E^\prime|\)，则称这张二分图具有完备匹配。 多重匹配 对于一张二分图 \(((A,B),E)\)，从 \(E\) 中选出尽量多的边，使 \(x \in A\) 最多与 \(l_x\) 条选出的边相连，\(y \in B\) 最多与 \">
+<meta property="og:description" content="网络流定理">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-10-16T09:10:25.000Z">
-<meta property="article:modified_time" content="2023-10-18T12:39:08.000Z">
+<meta property="article:modified_time" content="2024-02-11T06:06:49.440Z">
 <meta property="article:author" content="Dregen_Yor">
 <meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
@@ -236,7 +236,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-10-18 20:39:08" itemprop="dateModified" datetime="2023-10-18T20:39:08+08:00">2023-10-18</time>
+      <time title="Modified: 2024-02-11 14:06:49" itemprop="dateModified" datetime="2024-02-11T14:06:49+08:00">2024-02-11</time>
     </span>
 
   
@@ -255,7 +255,8 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="网络流">网络流</h1>
+    <div class="post-body" itemprop="articleBody"><p>网络流定理 <span id="more"></span></p>
+<h1 id="网络流">网络流</h1>
 <h3 id="二分图">二分图</h3>
 <h4 id="特殊的二分图匹配">特殊的二分图匹配</h4>
 <h5 id="完备匹配">完备匹配</h5>

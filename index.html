@@ -538,9 +538,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-10-27 18:56:24 / Modified: 18:56:26" itemprop="dateCreated datePublished" datetime="2023-10-27T18:56:24+08:00">2023-10-27</time>
+      <time title="Created: 2023-10-27 18:56:24" itemprop="dateCreated datePublished" datetime="2023-10-27T18:56:24+08:00">2023-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-02-11 14:05:50" itemprop="dateModified" datetime="2024-02-11T14:05:50+08:00">2024-02-11</time>
     </span>
 
   
@@ -686,7 +692,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-10-18 20:39:08" itemprop="dateModified" datetime="2023-10-18T20:39:08+08:00">2023-10-18</time>
+      <time title="Modified: 2024-02-11 14:06:49" itemprop="dateModified" datetime="2024-02-11T14:06:49+08:00">2024-02-11</time>
     </span>
 
   
@@ -699,73 +705,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="网络流">网络流</h1>
-<h3 id="二分图">二分图</h3>
-<h4 id="特殊的二分图匹配">特殊的二分图匹配</h4>
-<h5 id="完备匹配">完备匹配</h5>
-<p>对于一张二分图 <span class="math inline">\(((A,B),E)\)</span>，设其最大匹配为 <span class="math inline">\(E^\prime\)</span>，若 <span class="math inline">\(|A|=|B|=|E^\prime|\)</span>，则称这张二分图具有<strong>完备匹配</strong>。</p>
-<h5 id="多重匹配">多重匹配</h5>
-<p>对于一张二分图 <span class="math inline">\(((A,B),E)\)</span>，从 <span class="math inline">\(E\)</span> 中选出尽量多的边，使 <span class="math inline">\(x \in A\)</span> 最多与 <span class="math inline">\(l_x\)</span> 条选出的边相连，<span class="math inline">\(y \in B\)</span> 最多与 <span class="math inline">\(r_y\)</span> 条选出的边相连，则称选出的边为二分图的<strong>多重匹配</strong>。</p>
-<h5 id="最优匹配">最优匹配</h5>
-<p>对于一张二分图，边有边权，所有<strong>最大匹配</strong>中边权总和最大的，被称为<strong>最优匹配</strong>。</p>
-<h4 id="图的点覆盖">图的点覆盖</h4>
-<p>对于一张无向图 <span class="math inline">\((V,E)\)</span>，若存在一个点集 <span class="math inline">\(V^\prime\)</span>，满足 <span class="math inline">\(V^\prime \subseteq V\)</span>，且对于任意 <span class="math inline">\(e \in E\)</span>，<span class="math inline">\(e\)</span> 至少有一个端点属于 <span class="math inline">\(V^\prime\)</span>，则称 <span class="math inline">\(V^\prime\)</span> 为这张无向图的一组<strong>点覆盖</strong>。</p>
-<h5 id="二分图最小点覆盖">二分图最小点覆盖</h5>
-<p>在二分图中，包含点数最少的一组点覆盖被称为二分图的最小点覆盖。</p>
-<h5 id="定理">定理</h5>
-<p>在二分图中，最小点覆盖包含的点数，等于最大匹配包含的边数。</p>
-<h5 id="二分图最小点覆盖的一个要素二要素">二分图最小点覆盖的一个要素（二要素）</h5>
-<p>每条边有两个端点，二者中至少选择一个。</p>
-<h4 id="二分图最大独立集">二分图最大独立集</h4>
-<h5 id="图的独立集">图的独立集</h5>
-<p>对于一张无向图 <span class="math inline">\((V,E)\)</span>,若存在一个点集 <span class="math inline">\(V^\prime\)</span>，满足 <span class="math inline">\(V^\prime \subseteq V\)</span>，且对于任意 <span class="math inline">\(p,q \in V^\prime\)</span>，<span class="math inline">\((p,q) \notin E\)</span>，则称 <span class="math inline">\(V^\prime\)</span> 为这张无向图的一组<strong>独立集</strong>，包含点数最多的独立集称为图的<strong>最大独立集</strong>。</p>
-<h5 id="图的团">图的团</h5>
-<p>对于一张无向图 <span class="math inline">\((V,E)\)</span>,若存在一个点集 <span class="math inline">\(V^\prime\)</span>，满足 <span class="math inline">\(V^\prime \subseteq V\)</span>，且对于任意 <span class="math inline">\(p,q \in V^\prime\)</span>，<span class="math inline">\((p,q) \in E\)</span>，则称 <span class="math inline">\(V^\prime\)</span> 为这张无向图的一组<strong>团</strong>，包含点数最多的独立团的<strong>最大团</strong>。</p>
-<h5 id="定理-1">定理</h5>
-<p>对于无向图 <span class="math inline">\(G\)</span> 的最大团，等于补图 <span class="math inline">\(G^\prime\)</span> 的最大独立集。</p>
-<p>对于一般无向图，最大团，最大独立集是 NPC 问题。</p>
-<h5 id="二分图最大独立集-1">二分图最大独立集</h5>
-<p>在二分图中，包含点数最多的一组独立集被称为二分图的最大独立集。</p>
-<h5 id="定理-2">定理</h5>
-<p>对于一张 <span class="math inline">\(n\)</span> 个点的二分图，最大独立集大小，等于 <span class="math inline">\(n-\)</span> 最小点覆盖点数，等于 <span class="math inline">\(n-\)</span>最大匹配边数。</p>
-<h4 id="有向无环图的最小路径点覆盖">有向无环图的最小路径点覆盖</h4>
-<p>给定一张<strong>有向无环图</strong>，用尽量少的不相交的简单路径覆盖所有点（也就是每个点恰好被覆盖一次），这样的路径集合被称为<strong>最小路径点覆盖</strong>。</p>
-<h5 id="拆点二分图">拆点二分图</h5>
-<p>把每个点拆成编号为 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(x+n\)</span> 的两个点。</p>
-<p>建立一张新的二分图，<span class="math inline">\(1 \sim n\)</span> 是左部点，<span class="math inline">\(n+1 \sim 2n\)</span> 是右部点。</p>
-<p>对于原图的每条有向边 <span class="math inline">\((x,y)\)</span>，在二分图的左部点 <span class="math inline">\(x\)</span> 和右部点 <span class="math inline">\(y+n\)</span> 之间连边。</p>
-<p>最终得到的二分图即为原图的<strong>拆点二分图</strong>。</p>
-<h5 id="定理-3">定理</h5>
-<p>有向无环图的最小路径点覆盖包含的路径条数，等于 <span class="math inline">\(n-\)</span> 拆点二分图的最大匹配边数。</p>
-<h3 id="最小割">最小割</h3>
-<p>给定一个网格 <span class="math inline">\(G=(V,E)\)</span>，源点为 <span class="math inline">\(S\)</span>，汇点为 <span class="math inline">\(T\)</span>。</p>
-<p>若一个边集被删去后，源点 <span class="math inline">\(S\)</span> 和汇点 <span class="math inline">\(T\)</span> 不再连通，则称该边集为网络的<strong>割</strong>。</p>
-<p>边的容量之和最小的割称为网络的<strong>最小割</strong>。</p>
-<h5 id="最大流最小割定理">最大流最小割定理</h5>
-<p>最大流等于最小割。</p>
-<h5 id="点边转化">点边转化</h5>
-<p>把原来无向图中的每个点 <span class="math inline">\(x\)</span>，拆成入点 <span class="math inline">\(x\)</span> 和出点 <span class="math inline">\(x^\prime\)</span>，则在无向图中删去一个点，等价于在网络中断开 <span class="math inline">\((x,x^\prime)\)</span>。</p>
-<p>对于任意 <span class="math inline">\(x \neq S\)</span> 且 <span class="math inline">\(x \neq T\)</span> 的点 <span class="math inline">\(x\)</span> 连有向边 <span class="math inline">\((x,x^\prime)\)</span>，容量为 <span class="math inline">\(1\)</span>。</p>
-<p>对于原无向图的每条边 <span class="math inline">\((x,y)\)</span>，连有向边 <span class="math inline">\((x^\prime,y)\)</span> 和 <span class="math inline">\((y^\prime,x)\)</span>，容量为 <span class="math inline">\(+\infty\)</span>，即防止割断。</p>
-<h5 id="集合划分模型">集合划分模型</h5>
-<p>有 <span class="math inline">\(n\)</span> 个物品和两个集合 <span class="math inline">\(S,T\)</span>。</p>
-<p>如果将一个物品放入 <span class="math inline">\(S\)</span> 集合会花费 <span class="math inline">\(a_i\)</span>，放入 <span class="math inline">\(T\)</span> 集合会花费 <span class="math inline">\(b_i\)</span>。</p>
-<p>还有若干个形如 <span class="math inline">\(u,v,w\)</span> 限制条件，表示如果 <span class="math inline">\(u\)</span> 和 <span class="math inline">\(v\)</span> 同时不在一个集合会花费 <span class="math inline">\(w\)</span>。</p>
-<p>每个物品必须且只能属于一个集合，求最小的代价。</p>
-<p>我们对于每个集合设置源点 <span class="math inline">\(S\)</span> 和汇点 <span class="math inline">\(T\)</span>，第 <span class="math inline">\(i\)</span> 个点由 <span class="math inline">\(S\)</span> 连一条容量为 <span class="math inline">\(b_i\)</span> 的边、向 <span class="math inline">\(T\)</span> 连一条容量为 <span class="math inline">\(a_i\)</span> 的边。</p>
-<p>对于限制条件 <span class="math inline">\(u,v,w\)</span>，我们在 <span class="math inline">\(u,v\)</span> 之间连容量为 <span class="math inline">\(w\)</span> 的双向边。</p>
-<p>注意到当 <span class="math inline">\(S\)</span> 和 <span class="math inline">\(T\)</span> 不相连时，<span class="math inline">\(S\)</span> 能到达 <span class="math inline">\(i\)</span> 代表物品 <span class="math inline">\(i\)</span> 放入 <span class="math inline">\(S\)</span>，<span class="math inline">\(i\)</span> 能到达 <span class="math inline">\(T\)</span> 代表物品 <span class="math inline">\(i\)</span> 放入 <span class="math inline">\(T\)</span>。</p>
-<p>当割开 <span class="math inline">\(S \to i\)</span> 的边，意味着 <span class="math inline">\(i\)</span> 放入 <span class="math inline">\(T\)</span>；当割开 <span class="math inline">\(i \to T\)</span> 的边，意味着 <span class="math inline">\(i\)</span> 放入 <span class="math inline">\(S\)</span>；</p>
-<p>当割开 <span class="math inline">\(u,v\)</span> 之间的边，意味着 <span class="math inline">\(u,v\)</span> 不放入同一个集合。</p>
-<p>因此最小割就是最小花费。</p>
-<h5 id="最小割的可行边与必须边">最小割的可行边与必须边</h5>
-<p>首先求最大流，那么最小割的可行边与必须边都必须是<strong>满流</strong>。</p>
-<ul>
-<li>可行边 <span class="math inline">\((x,y)\)</span>：在残量网络中不存在 <span class="math inline">\(x\)</span> 到 <span class="math inline">\(y\)</span> 的路径。</li>
-<li>必须边 <span class="math inline">\((x,y)\)</span>：在残量网络中 <span class="math inline">\(S\)</span> 能到 <span class="math inline">\(x\)</span> 且 <span class="math inline">\(y\)</span> 能到 <span class="math inline">\(T\)</span>。</li>
-</ul>
-<p>用 Tarjan 跑强连通分量，判断 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 是否在同一强连通分量中，同时判断 <span class="math inline">\(S\)</span> 与 <span class="math inline">\(x\)</span>，<span class="math inline">\(y\)</span> 与 <span class="math inline">\(T\)</span> 是否在同一强连通分量中即可。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+          <p>网络流定理
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/10/16/%E7%BD%91%E7%BB%9C%E6%B5%81%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
