@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://dregen-yor.github.io/2023/12/21/GitHub%E5%AD%A6%E7%94%9F%E5%8C%85%E7%94%B3%E8%AF%B7%E6%B5%81%E7%A8%8B/</loc>
+    <loc>https://dregen-yor.github.io/2024/01/22/Toyota%20Programming%20Contest%202024#1%D0%B3%D0%B8AtCoder%20Beginner%20Contest%20337%E9%A2%98%E8%A7%A3/</loc>
     
     <lastmod>2024-02-11</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://dregen-yor.github.io/2024/01/22/Toyota%20Programming%20Contest%202024#1%D0%B3%D0%B8AtCoder%20Beginner%20Contest%20337%E9%A2%98%E8%A7%A3/</loc>
+    <loc>https://dregen-yor.github.io/2023/12/21/GitHub%E5%AD%A6%E7%94%9F%E5%8C%85%E7%94%B3%E8%AF%B7%E6%B5%81%E7%A8%8B/</loc>
     
-    <lastmod>2024-01-22</lastmod>
+    <lastmod>2024-02-11</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -116,6 +116,13 @@
   
   <url>
     <loc>https://dregen-yor.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://dregen-yor.github.io/tags/%E9%A2%98%E8%A7%A3/</loc>
     <lastmod>2024-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
