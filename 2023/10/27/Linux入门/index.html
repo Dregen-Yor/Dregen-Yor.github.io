@@ -19,25 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"dregen-yor.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":null,"show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习笔记">
-<meta property="og:url" content="https://dregen-yor.github.io/2023/10/19/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+    <meta name="description" content="常见指令 关机 关机流程一般为 sync-&gt;shutdown-&gt;reboot-&gt;halt。 12345678910111213141516171819sync 将数据由内存同步到硬盘中。shutdown 关机指令，你可以man shutdown 来看一下帮助文档。例如你可以运行如下命令关机：shutdown –h 10 ‘This server will shutdown aft">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux入门">
+<meta property="og:url" content="https://dregen-yor.github.io/2023/10/27/Linux%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="Dregen_Yor">
+<meta property="og:description" content="常见指令 关机 关机流程一般为 sync-&gt;shutdown-&gt;reboot-&gt;halt。 12345678910111213141516171819sync 将数据由内存同步到硬盘中。shutdown 关机指令，你可以man shutdown 来看一下帮助文档。例如你可以运行如下命令关机：shutdown –h 10 ‘This server will shutdown aft">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-10-19T03:12:54.000Z">
-<meta property="article:modified_time" content="2023-10-19T03:12:56.000Z">
+<meta property="article:published_time" content="2023-10-27T10:56:34.000Z">
+<meta property="article:modified_time" content="2023-10-30T10:35:48.000Z">
 <meta property="article:author" content="Dregen_Yor">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://dregen-yor.github.io/2023/10/19/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="https://dregen-yor.github.io/2023/10/27/Linux%E5%85%A5%E9%97%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dregen-yor.github.io/2023/10/19/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","path":"2023/10/19/Java学习笔记/","title":"Java学习笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dregen-yor.github.io/2023/10/27/Linux%E5%85%A5%E9%97%A8/","path":"2023/10/27/Linux入门/","title":"Linux入门"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Java学习笔记 | Dregen_Yor</title>
+<title>Linux入门 | Dregen_Yor</title>
   
 
 
@@ -127,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -140,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%8C%87%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">常见指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E6%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">关机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%9B%AE%E5%BD%95"><span class="nav-number">1.2.</span> <span class="nav-text">处理目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">系统目录结构</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,7 +200,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://dregen-yor.github.io/2023/10/19/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://dregen-yor.github.io/2023/10/27/Linux%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/image/avatar.jpg">
@@ -209,12 +213,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Java学习笔记 | Dregen_Yor">
+      <meta itemprop="name" content="Linux入门 | Dregen_Yor">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Java学习笔记
+          Linux入门
         </h1>
 
         <div class="post-meta-container">
@@ -224,9 +228,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-10-19 11:12:54 / Modified: 11:12:56" itemprop="dateCreated datePublished" datetime="2023-10-19T11:12:54+08:00">2023-10-19</time>
+      <time title="Created: 2023-10-27 18:56:34" itemprop="dateCreated datePublished" datetime="2023-10-27T18:56:34+08:00">2023-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-10-30 18:35:48" itemprop="dateModified" datetime="2023-10-30T18:35:48+08:00">2023-10-30</time>
     </span>
 
   
@@ -245,7 +255,80 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><h2 id="常见指令">常见指令</h2>
+<h3 id="关机">关机</h3>
+<p>关机流程一般为 <code>sync-&gt;shutdown-&gt;reboot-&gt;halt</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sync 将数据由内存同步到硬盘中。</span><br><span class="line"></span><br><span class="line">shutdown 关机指令，你可以man shutdown 来看一下帮助文档。例如你可以运行如下命令关机：</span><br><span class="line"></span><br><span class="line">shutdown –h 10 ‘This server will shutdown after 10 mins’ 这个命令告诉大家，计算机将在10分钟后关机，并且会显示在登陆用户的当前屏幕中。</span><br><span class="line"></span><br><span class="line">shutdown –h now 立马关机</span><br><span class="line"></span><br><span class="line">shutdown –h 20:25 系统会在今天20:25关机</span><br><span class="line"></span><br><span class="line">shutdown –h +10 十分钟后关机</span><br><span class="line"></span><br><span class="line">shutdown –r now 系统立马重启</span><br><span class="line"></span><br><span class="line">shutdown –r +10 系统十分钟后重启</span><br><span class="line"></span><br><span class="line">reboot 就是重启，等同于 shutdown –r now</span><br><span class="line"></span><br><span class="line">halt 关闭系统，等同于shutdown –h now 和 poweroff</span><br></pre></td></tr></table></figure>
+<p>最后总结一些，不管是重启系统还是关闭系统，首先要运行 <strong>sync</strong> 命令，把内存中的数据写到磁盘中。chu</p>
+<h3 id="处理目录">处理目录</h3>
+<ul>
+<li><code>ls</code> ：列出目录及文件名。</li>
+<li><code>cd</code> ：切换目录。</li>
+<li><code>pwd</code> ：显示目前的目录</li>
+<li><code>mkdir</code> ：创建一个新的目录。</li>
+<li><code>rmdir</code> ：删除一个空的目录。</li>
+<li><code>cp</code> ：复制文件或目录。</li>
+<li><code>rm</code> 删除文件或目录。</li>
+<li><code>mv</code> ：移动文件与目录，或修改文件与目录的名称。</li>
+</ul>
+<p>可以使用 <code>man [命令]</code> 来查看各各命令的使用文档，如： ``</p>
+<h2 id="系统目录结构">系统目录结构</h2>
+<p>登录系统后，在终端内输入如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /</span><br></pre></td></tr></table></figure>
+<p>会看到若干目录，一下是对这些目录的解释：</p>
+<ul>
+<li><p>/bin</p>
+<p>bin是 Binaries （二进制文件）的缩写，这个目录存放着最经常使用的命令。</p></li>
+<li><p>/boot</p>
+<p>这里存放的是启动 Linux时使用的一些核心文件，包括一些连接文件以及镜像文件。</p></li>
+<li><p>/dev</p>
+<p>dev 是 Device（设备）的缩写，该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</p></li>
+<li><p>/etc</p>
+<p>etc 是 Etcetera （等等）的缩写，这个目录用来存放所有的系统管理苏哦需要的配置文件和子目录。</p></li>
+<li><p>/home</p>
+<p>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的。</p></li>
+<li><p>/lib</p>
+<p>lib 是 Library（库）的缩写，这个目录里存放着系统最基本的动态链接共享库，其作用类似于 Windows 里的 DLL 文件，几乎所有的英语程序都需要用到这些共享库。</p></li>
+<li><p>/lost+found</p>
+<p>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p></li>
+<li><p>/media</p>
+<p>Linux 会自动识别一些设备，如 U 盘，光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p></li>
+<li><p>/mnt</p>
+<p>系统提供该目录是为了让用户临时挂载别的系统文件的，我们可以将光驱挂载在 /mnt/ 上，然后进入该目录就可以查看光驱里的内容了。</p></li>
+<li><p>/opt</p>
+<p>opt 是 optional（可选）的缩写，这里是给主机额外安装软件所摆放的目录。比如你安装一个 ORACLE 数据库则就可以放到这个目录下。默认是空的。</p></li>
+<li><p>/proc</p>
+<p>proc 是 Processes（进程）的缩写，/proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all</span><br></pre></td></tr></table></figure></li>
+<li><p>/root</p>
+<p>该目录为系统管理员，也称作超级权限者的用户主目录。</p></li>
+<li><p>/sbin</p>
+<p>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</p></li>
+<li><p>/selinux</p>
+<p>这个目录是 Redhat/CentOS 所特有的目录，Selinux 是一个安全机制，类似于 Windows 的防火墙，但是这套机制比较复杂，这个目录就是存放 selinux 相关的文件的。</p></li>
+<li><p>/srv</p>
+<p>该目录存放一些服务启动后需要提取的数据。</p></li>
+<li><p>/sys</p>
+<p>这是 Linux2.6 内核的一个很大的变化。该目录下安装了 2.6 内核中新出现的一个文件系统 sysfs。</p>
+<p>sysfs 文件系统集成了下面 3 种文件系统的信息：针对进程信息的 proc 文件系统，针对设备的 devfs 文件系统以及针对伪终端的 devpts 文件系统。</p>
+<p>该文件系统是内核设备树的一个直观反映。</p>
+<p>当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p></li>
+<li><p>/tmp</p>
+<p>tmp 是 temporary（临时）的缩写，这个目录是用来存放一些临时文件的。</p></li>
+<li><p>/usr</p>
+<p>usr 是 unix shared resources（共享资源）的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p></li>
+<li><p>/usr/bin</p>
+<p>系统用户使用的应用程序。</p></li>
+<li><p>/usr/sbin</p>
+<p>超级用户使用的比较高级的管理程序和系统守护程序。</p></li>
+<li><p>/usr/src</p>
+<p>内核源代码默认的放置目录。</p></li>
+<li><p>/var</p>
+<p>var 是 variable（变量）的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下，包括各种目录日志文件。</p></li>
+<li><p>/run</p>
+<p>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删除或者清除。如果你的电脑上有 /var/run 目录，应该让它指向 run。</p></li>
+</ul>
+<p>其中 <strong>/etc</strong> 中的某个文件被更改可能导致<strong>系统不能启动</strong>。<strong>/bin，/usr/bin</strong> 是给系统用户使用的指令（除 <strong>root</strong> 以外的用户），而 <strong>/sbin，/usr/sbin</strong> 则是给 <strong>root</strong> 用户使用的指令。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
@@ -254,18 +337,21 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/10/16/%E7%BD%91%E7%BB%9C%E6%B5%81%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="prev" title="网络流学习记录">
-                  <i class="fa fa-angle-left"></i> 网络流学习记录
+                <a href="/2023/10/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="Linux学习笔记">
+                  <i class="fa fa-angle-left"></i> Linux学习笔记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/10/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="Linux学习笔记">
-                  Linux学习笔记 <i class="fa fa-angle-right"></i>
+                <a href="/2023/12/21/GitHub%E5%AD%A6%E7%94%9F%E5%8C%85%E7%94%B3%E8%AF%B7%E6%B5%81%E7%A8%8B/" rel="next" title="GitHub学生包申请流程">
+                  GitHub学生包申请流程 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
